@@ -1,0 +1,17 @@
+name: public-action
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'name'
+        required: true
+        type: string
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print
+        shell: bash
+        run: |
+          echo "${{inputs.name}}"
+      
